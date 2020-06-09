@@ -1,8 +1,6 @@
 package xueqiu.testcase;
 
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 import xueqiu.page.MainActivity;
@@ -18,19 +16,18 @@ import static org.junit.jupiter.api.Assertions.*;
  * Time: 07:53
  */
 class SearchPageTest {
-    static MainActivity mainActivity;
     static SearchPage searchPage;
 
-    @BeforeEach
-    void setUp() {
+    @BeforeAll
+    static void setUp() {
 //        mainActivity = new MainActivity();
 //       searchPage = mainActivity.toSearchPage();
         searchPage = new MainActivity().toSearchPage();
     }
 
-    @AfterEach
-    void tearDown() {
-
+    @AfterAll
+    static void tearDown() {
+        searchPage.quit();
     }
 
     @ParameterizedTest
