@@ -2,11 +2,9 @@ package xueqiu.page;
 
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
-import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -33,7 +31,7 @@ public class SearchPage extends BasePage {
      * @param keyword
      * @return
      */
-    @Step("搜索")
+//    @Step("搜索")
     public SearchPage search(String keyword) {
 //        driver.findElementById("com.xueqiu.android:id/search_input_text").sendKeys(keyword);
         do {
@@ -47,7 +45,7 @@ public class SearchPage extends BasePage {
      *
      * @return
      */
-    @Step("获取搜索结果列表")
+//    @Step("获取搜索结果列表")
     public List<String> getSearchList() {
         List<String> nameList = new ArrayList<>();
 /*        for (MobileElement name : driver.findElements(nameLocation)) {
@@ -62,7 +60,7 @@ public class SearchPage extends BasePage {
      *
      * @return
      */
-    @Step("获取股价")
+//    @Step("获取股价")
     public double getPrice() {
         click(nameLocation);
 //        driver.findElement(nameLocation).click();

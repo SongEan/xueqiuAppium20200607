@@ -9,7 +9,7 @@ import org.openqa.selenium.By;
  * Date: 2020-06-08
  * Time: 22:35
  */
-public class Wework extends BasePage {
+public class Wework extends AppBasePage {
     By scheduleButton = By.id("adv");
 
     public Wework() {

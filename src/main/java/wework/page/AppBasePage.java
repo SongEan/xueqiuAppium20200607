@@ -7,6 +7,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import testFramework.BasePage;
 
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -19,17 +20,21 @@ import java.util.concurrent.TimeUnit;
  * Date: 2020-06-07
  * Time: 22:32
  */
-public class BasePage {
+public class AppBasePage extends BasePage{
     AndroidDriver<MobileElement> driver;
     public WebDriverWait wait;
 
     String packageName;
     String activityName;
 
-    public BasePage(String packageName, String activityName) {
+    public AppBasePage(String packageName, String activityName) {
         this.packageName = packageName;
         this.activityName = activityName;
         startAPP(this.packageName, this.activityName);
+    }
+
+    public AppBasePage() {
+
     }
 
     public void startAPP(String packageName, String activityName) {
@@ -63,7 +68,7 @@ public class BasePage {
         wait = new WebDriverWait(driver, 10);
     }
 
-    public BasePage(AndroidDriver<MobileElement> driver) {
+    public AppBasePage(AndroidDriver<MobileElement> driver) {
         this.driver = driver;
         wait = new WebDriverWait(driver, 10);
     }

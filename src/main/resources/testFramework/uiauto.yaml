@@ -1,0 +1,23 @@
+name: XXX测试
+descriptions: 主要测试登录
+steps:
+#  - method: click
+#    param: [1,2]
+#  - action: click
+#    by: id
+#    locatior: search
+#  - action: click
+#    id: click
+#  - click: {id: search}
+  #简化格式 key-id value  action-value
+  - id: search1
+    action: click
+  - id: input
+    action: sendleys
+    text: "input text！"
+  - id: inputText
+    sendkeys: "输入text！"
+  - click: {id: search2}
+  - id: get
+    action: getText
+    key: searchText #获取getText后存储的变量名searchText

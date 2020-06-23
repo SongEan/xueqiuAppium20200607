@@ -4,8 +4,6 @@ import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
 import org.openqa.selenium.By;
 
-import javax.xml.parsers.SAXParser;
-import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -16,7 +14,7 @@ import java.util.stream.Collectors;
  * Date: 2020-06-08
  * Time: 22:46
  */
-public class SchedulePage extends BasePage {
+public class SchedulePage extends AppBasePage {
 
 
     private By addButton = By.id("gym");
