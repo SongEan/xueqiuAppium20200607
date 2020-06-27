@@ -9,7 +9,7 @@ import wework.page.AppBasePage;
  * Date: 2020-06-23
  * Time: 09:37
  */
-public class Factory {
+public class UiAutoFactory {
     public static BasePage createDriver(String driverName) {
         if ("web".equals(driverName) || "selenium".equals(driverName)) {
             return new WebBasePage();

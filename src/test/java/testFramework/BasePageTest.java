@@ -35,18 +35,29 @@ class BasePageTest {
 
     @Test
     void run() {
-        TestCasePOJO testCasePOJO = basePage.load("/testFramework/uiauto.yaml");
-        basePage.run(testCasePOJO);
+        TestCaseModel testCaseModel = basePage.load("/testFramework/uiauto.yaml");
+        basePage.run(testCaseModel);
     }
 
     @Test
     void load() {
-        TestCasePOJO testCasePOJO = basePage.load("/testFramework/uiauto.yaml");
+        TestCaseModel testCaseModel = basePage.load("/testFramework/uiauto.yaml");
         ObjectMapper objectMapper = new ObjectMapper();
         try {
-            System.out.println(objectMapper.writeValueAsString(testCasePOJO));
+            System.out.println(objectMapper.writeValueAsString(testCaseModel));
         } catch (JsonProcessingException e) {
             e.printStackTrace();
         }
     }
+
+
+    @Test
+    void runPOM(){
+        basePage.loadPages("src/main/resources/testFramework");
+        TestCaseModel testCaseModel = basePage.load("/testFramework/webuiauto2.yaml");
+        basePage.run(testCaseModel);
+
+    }
+
+
 }

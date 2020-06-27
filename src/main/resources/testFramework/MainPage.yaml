@@ -1,0 +1,8 @@
+name: mainPage
+methods:
+  init:
+    - action: get
+      url: https://ceshiren.com/
+  toContent:
+    - click: {linkText: 最新}
+    - click: {linkText: 热门}

@@ -126,12 +126,14 @@ public class WebBasePage extends BasePage {
         click(by);
     }
 
-//    重写BasePage中action方法解析webuiauto.yaml文件中action: get字段
+    //    重写BasePage中action方法解析webuiauto.yaml文件中action: get字段
     @Override
     public void action(HashMap<String, Object> map) {
         super.action(map);
-        if (map.get("action").equals("get")) {
-            driver.get(map.get("url").toString());
+        if (map.containsKey("action")) {
+            if (map.get("action").equals("get")) {
+                driver.get(map.get("url").toString());
+            }
         }
     }
 }

@@ -1,0 +1,11 @@
+name: po封装测试
+descriptions: 测试po封装解析测试
+steps:
+  #简化格式 key-id value  action-value
+  #  page: mainPage 中value值与MainPage_page.yaml中name值对应
+  - page: mainPage
+    action: init
+
+  - page: mainPage
+    action: toContent
+

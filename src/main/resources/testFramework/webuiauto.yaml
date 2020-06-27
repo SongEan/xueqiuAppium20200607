@@ -1,8 +1,18 @@
-name: XXX测试
+name: 首页测试用例
 descriptions: 主要测试登录
 steps:
-  #简化格式 key-id value  action-value
+  #简化格式 key-id value  action-value，操作模块
   - action: get
     url: https://ceshiren.com/
   - click: {linkText: 最新}
   - click: {linkText: 热门}
+#  断言模块
+  - action: exit
+    id: XX
+  - action: getText
+    id: xxid
+    save: xxid_text
+  - action: equals
+    expect: "XXX"
+    actual: xx_text
+

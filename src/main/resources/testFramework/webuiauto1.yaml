@@ -1,0 +1,8 @@
+name: XXX测试
+descriptions: 主要测试登录
+steps:
+  #简化格式 key-id value  action-value
+  - action: get
+    url: https://ceshiren.com/
+  - click: {linkText: 测试内推}
+  - click: {linkText: 开源项目}

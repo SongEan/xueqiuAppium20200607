@@ -10,7 +10,7 @@ import java.util.List;
  * Date: 2020-06-18
  * Time: 22:37
  */
-public class TestCasePOJO {
+public class TestCaseModel {
     public String name="";
     public String descriptions="";
     public List<HashMap<String, Object>> steps;
