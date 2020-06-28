@@ -41,32 +41,33 @@ public class BasePage {
         System.out.println("action-----");
         System.out.println(map);
 
-        if (map.containsKey("page")) {
-            String action = map.get("action").toString();
-            String pageName = map.get("page").toString();
-            pages.forEach(pom -> System.out.println("****" + pom.name));
-
-            pages.stream().filter(
-                    pom -> pom.name.equals(pageName))
-                    .findFirst()
-                    .get()
-                    .methods.get(action)
-                    .forEach(step -> {
-                        action(step);
-                    });
-        } else {
-            if (map.containsKey("click")) {
-                HashMap<String, Object> by = (HashMap<String, Object>) map.get("click");
-                click(by);
-            }
+        if (map.containsKey("click")) {
+            System.out.println("*********");
+            HashMap<String, Object> by = (HashMap<String, Object>) map.get("click");
+            click(by);
+        }
 
 //            解析 sendkeys: "输入text！"
-            if (map.containsKey("sendKeys")) {
-                sendKeys(map);
-            }
+        if (map.containsKey("sendKeys")) {
+            sendKeys(map);
         }
     }
 
+    private void pageObject(HashMap<String, Object> map) {
+        String action = map.get("action").toString();
+        String pageName = map.get("page").toString();
+//            pages.forEach(pom -> System.out.println("****" + pom.name));
+
+        pages.stream().filter(
+                pom -> pom.name.equals(pageName))
+                .findFirst()
+                .get()
+                .methods.get(action)
+                .forEach(step -> {
+                    action(step);
+                });
+
+    }
 
     public void getText() {
 
@@ -77,7 +78,7 @@ public class BasePage {
     }
 
     /**
-     * 读取的yaml配置文件字段进行点击，元素识别等操作解析
+     * 读取的测试用例yaml配置文件字段进行点击，元素识别等操作解析
      *
      * @param testCase
      */
@@ -103,6 +104,10 @@ public class BasePage {
 //            解析 sendkeys: "输入text！"
             if (m.containsKey("sendKeys")) {
                 sendKeys(m);
+            }
+
+            if (m.containsKey("page")) {
+                pageObject(m);
             }
         });
     }
